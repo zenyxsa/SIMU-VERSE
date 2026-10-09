@@ -12,8 +12,8 @@ function App() {
   const [apiKey, setApiKey] = useState(() => localStorage.getItem('simu_apikey') || '');
   const [apiModel, setApiModel] = useState(() => {
     const saved = localStorage.getItem('simu_apimodel');
-    const validModels = ['llama-3.1-8b-instant', 'llama-3.1-70b-versatile', 'llama-3.2-11b-text-preview', 'mixtral-8x7b-32768'];
-    return validModels.includes(saved) ? saved : 'llama-3.1-8b-instant';
+    const validModels = ['openai/gpt-oss-20b', 'openai/gpt-oss-120b', 'qwen/qwen3.8-27b'];
+    return validModels.includes(saved) ? saved : 'openai/gpt-oss-20b';
   });
   const [theme, setTheme] = useState(() => localStorage.getItem('simu_theme') || 'dark');
   const [activeScenario, setActiveScenario] = useState(null);
