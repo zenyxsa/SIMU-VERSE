@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { X, Key, ShieldAlert, Palette } from 'lucide-react';
 
-const SettingsPanel = ({ apiKey, apiModel = 'llama-3.1-8b-instant', theme = 'dark', onSave, onClose }) => {
+const SettingsPanel = ({ apiKey, apiModel = 'openai/gpt-oss-20b', theme = 'dark', onSave, onClose }) => {
   const [inputKey, setInputKey] = useState(apiKey);
   const [selectedModel, setSelectedModel] = useState(apiModel);
   const [selectedTheme, setSelectedTheme] = useState(theme);
@@ -45,10 +45,9 @@ const SettingsPanel = ({ apiKey, apiModel = 'llama-3.1-8b-instant', theme = 'dar
               onChange={(e) => setSelectedModel(e.target.value)}
               style={{cursor: 'pointer'}}
             >
-              <option value="llama-3.1-8b-instant">Llama 3.1 8B</option>
-              <option value="llama-3.1-70b-versatile">Llama 3.1 70B</option>
-              <option value="llama-3.2-11b-text-preview">Llama 3.2 11B</option>
-              <option value="mixtral-8x7b-32768">Mixtral 8x7B</option>
+              <option value="openai/gpt-oss-20b">GPT-OSS 20B (Fast)</option>
+              <option value="openai/gpt-oss-120b">GPT-OSS 120B (More capable)</option>
+              <option value="qwen/qwen3.8-27b">Qwen 3.8 27B</option>
             </select>
           </div>
 
